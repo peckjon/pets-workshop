@@ -14,11 +14,13 @@ const Hours = () => {
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
     // get today's hours
     const hours = shelterHours.find(({ day }) => day === today);
-    // display a header of "Today's Hours", and the hours (in a paragraph), inside an div with an id of "hours"
+    // display a header of "Today's Hours", and the name of today and hours (in a paragraph), inside an div with an id of "hours"
     return (
         <div id="hours">
-            <h3>Today's Hours</h3>
-            <p>{hours.open} - {hours.close}</p>
+            <h2>Today's Hours</h2>
+            <p>
+                {today}: {hours.open} - {hours.close}
+            </p>
         </div>
     );
 }
